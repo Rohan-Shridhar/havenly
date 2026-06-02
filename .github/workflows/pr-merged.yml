@@ -1,7 +1,7 @@
 name: Thank You for Your Contribution
 
 on:
-  pull_request:
+  pull_request_target:
     types: [closed]
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Post thank you comment
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
