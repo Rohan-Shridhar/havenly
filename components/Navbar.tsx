@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Search, Menu, X, LogOut, LayoutDashboard, Home } from 'lucide-react';
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -25,8 +25,8 @@ export function Navbar() {
               havenly
             </span>
           </Link>
-          {/* Center Tabs - Hidden on mobile */}
 
+          {/* Center Tabs - Hidden on mobile */}
           <div className="hidden md:flex flex-1 justify-center px-6 gap-8 text-[16px] items-center">
             <Link
               href="/"

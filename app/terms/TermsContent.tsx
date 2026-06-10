@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 type Section = {
@@ -95,6 +95,11 @@ const sections: Section[] = [
   },
 ];
 
+const tocItems = sections.map((section, index) => ({
+  ...section,
+  label: `${index + 1}. ${section.title}`,
+}));
+
 export function TermsContent() {
   const [activeSection, setActiveSection] = useState(sections[0].id);
 
@@ -105,7 +110,7 @@ export function TermsContent() {
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-        if (visible?.target.id) {
+        if (visible && visible.target && visible.target.id) {
           setActiveSection(visible.target.id);
         }
       },
@@ -124,15 +129,6 @@ export function TermsContent() {
 
     return () => observer.disconnect();
   }, []);
-
-  const tocItems = useMemo(
-    () =>
-      sections.map((section, index) => ({
-        ...section,
-        label: `${index + 1}. ${section.title}`,
-      })),
-    []
-  );
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -174,7 +170,7 @@ export function TermsContent() {
                         ? 'border-primary/20 bg-primary/5 text-foreground shadow-sm'
                         : 'border-transparent text-muted-foreground hover:border-border hover:bg-muted/50 hover:text-foreground'
                     )}
-                    aria-current={activeSection === section.id ? 'true' : undefined}
+                    aria-current={activeSection === section.id ? true : undefined}
                   >
                     {section.label}
                   </button>
