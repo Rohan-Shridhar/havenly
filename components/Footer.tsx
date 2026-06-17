@@ -96,7 +96,7 @@ export function Footer() {
             <h3 className="font-semibold text-sm text-foreground mb-4">Havenly</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li><Link href="/newsroom" className="hover:underline">Newsroom</Link></li>
-              <li><a href="#" className="hover:underline">New features</a></li>
+              <li><a href="/new-features" className="hover:underline">New features</a></li>
               <li>
                 <Link href="/careers" className="hover:underline">
                   Careers
@@ -115,13 +115,13 @@ export function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-foreground">
             <span>© 2026 Havenly, Inc.</span>
             <span>·</span>
-            <a href="#" className="hover:underline">Privacy</a>
+            <a href="/privacy" className="hover:underline">Privacy</a>
             <span>·</span>
             <Link href="/terms" className="hover:underline">Terms</Link>
             <span>·</span>
-            <a href="#" className="hover:underline">Sitemap</a>
+            <a href="/sitemap" className="hover:underline">Sitemap</a>
             <span>·</span>
-            <a href="#" className="hover:underline">Company details</a>
+            <Link href="/company-details" className="hover:underline">Company details</Link>
           </div>
 
           <div className="flex items-center gap-6">
