@@ -84,25 +84,25 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-sm text-foreground mb-4">Hosting</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:underline">Havenly your home</a></li>
+              <li><a href="/havenly-your-home" className="hover:underline">Havenly your home</a></li>
               <li><a href="#" className="hover:underline">AirCover for Hosts</a></li>
-              <li><a href="#" className="hover:underline">Hosting resources</a></li>
+              <li><a href="/hosting-resources" className="hover:underline">Hosting resources</a></li>
               <li><a href="#" className="hover:underline">Community forum</a></li>
-              <li><a href="#" className="hover:underline">Hosting responsibly</a></li>
-              <li><a href="#" className="hover:underline">Join a free hosting class</a></li>
+              <li><Link href="/hosting-responsibility" className="hover:underline">Hosting responsibly</Link></li>
+              <li><a href="/free-hosting-class" className="hover:underline">Join a free hosting class</a></li>
             </ul>
           </div>
           <div>
             <h3 className="font-semibold text-sm text-foreground mb-4">Havenly</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:underline">Newsroom</a></li>
-              <li><a href="#" className="hover:underline">New features</a></li>
+              <li><Link href="/newsroom" className="hover:underline">Newsroom</Link></li>
+              <li><a href="/new-features" className="hover:underline">New features</a></li>
               <li>
                 <Link href="/careers" className="hover:underline">
                   Careers
                 </Link>
               </li>
-              <li><a href="#" className="hover:underline">Investors</a></li>
+              <li><a href="/investors" className="hover:underline">Investors</a></li>
               <li><a href="#" className="hover:underline">Havenly.org emergency stays</a></li>
             </ul>
           </div>
@@ -115,13 +115,13 @@ export function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-foreground">
             <span>© 2026 Havenly, Inc.</span>
             <span>·</span>
-            <a href="#" className="hover:underline">Privacy</a>
+            <a href="/privacy" className="hover:underline">Privacy</a>
             <span>·</span>
             <Link href="/terms" className="hover:underline">Terms</Link>
             <span>·</span>
-            <a href="#" className="hover:underline">Sitemap</a>
+            <a href="/sitemap" className="hover:underline">Sitemap</a>
             <span>·</span>
-            <a href="#" className="hover:underline">Company details</a>
+            <Link href="/company-details" className="hover:underline">Company details</Link>
           </div>
 
           <div className="flex items-center gap-6">
