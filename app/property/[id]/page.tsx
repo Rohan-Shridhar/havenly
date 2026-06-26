@@ -14,6 +14,7 @@ import {
 } from '@/lib/dummy-data';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/use-toast';
 import {
   Star,
   MapPin,
@@ -54,6 +55,7 @@ const amenityIconMap: Record<string, React.ReactNode> = {
 
 export default function PropertyPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
+  const { toast } = useToast();
   const property = properties.find((p) => p.id === id);
   const host = property ? hosts.find((h) => h.id === property.hostId) : null;
   const propertyReviews = property
@@ -110,7 +112,14 @@ export default function PropertyPage({ params }: { params: Promise<{ id: string 
 
           {/* Share and Save Buttons */}
           <div className="flex gap-2 flex-shrink-0">
-            <Button variant="outline" size="sm">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                navigator.clipboard.writeText(window.location.href);
+                toast({ title: 'Link copied to clipboard!' });
+              }}
+            >
               <Share2 size={16} />
             </Button>
             <Button variant="outline" size="sm">
